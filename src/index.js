@@ -9,7 +9,7 @@ module.exports = function check(str, bracketsConfig) {
   for (let i = 0; i < str.length; i++) {
     let current = str[i]; 
     if (openBrackets.includes(current)) {
-      if (stack.includes(current) && (bracketsPair[current] === current)) {
+      if ((stack[stack.length - 1] === current) && (bracketsPair[current] === current)) {
         stack.pop();
       } else {
         stack.push(current);
